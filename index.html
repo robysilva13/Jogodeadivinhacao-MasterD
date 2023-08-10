@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica19</title>
+
+    <script> 
+
+    var numeroEsc = Math.ceil(Math.random()*20);
+
+    var palpite = prompt("Adivinhe de 1 a 20 que estou a pensar!");
+
+    var tentativa = 3; 
+
+    if (palpite == numeroEsc){
+        alert("Parabéns acertou"); 
+    } else {
+        tentativa --;
+        if (Math.abs(palpite - numeroEsc)< 4) {
+            alert
+            ("quase acertou!"); 
+        } else {
+            alert("ups, falhou!"); 
+        }
+    }
+
+    while (tentativa != numeroEsc) {
+        alert("Fim do jogo! Ganhei"); 
+        break;
+    }
+
+    var palpite = prompt("Adivinhe aqui"); 
+    if (palpite == numeroEsc) {
+        alert("Parabéns acertou!");
+
+    } else{
+        tentativa--; 
+        if (Math.abs(palpite - numeroEsc) < 4 ) {
+            alert("Quase acertou!"); 
+
+        } else {
+            alert("Ups, falhou!");
+        }
+    }
+
+    function botaonum() {
+        document.getElementById("textobotao").innerHTML = `O número escolhido foi ${numeroEsc}`;
+    }
+    </script>
+
+    <style>
+        body{
+            background-color: #0093E9;
+            background-repeat: no-repeat;
+            text-align: center;
+            width: 100%;
+            padding-top: 200px;
+            padding-bottom: 300px;
+        }
+
+        #texto {
+            font-size: 56px;
+            color: white;
+        }
+
+        #my-button {
+            font-size: 24px;
+            background-color: wheat;
+            border: solid 1px;
+            color: #0093E9;
+            padding: 20px;
+            
+        }
+
+        #textobotao {
+            font-size: 40px;
+            font-style: italic;
+
+            color: wheat;
+
+        }
+    </style>
+    <body>
+
+</head>
+<p id="texto"> Clique no botão abaixo para ver qual foi o numero escolhido.</p>
+
+<button onclick="botaonum()" id="my-button">Numero escolhido</button>
+
+
+<p id="textobotao"></p>
+
+    
+</body>
+</html>
